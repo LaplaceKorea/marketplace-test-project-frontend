@@ -3,7 +3,9 @@
   "sources": [
     {
       "dir": "src",
-      "subdirs": true
+      "subdirs": [
+        { "dir": "component" }
+      ]
     }
   ],
   "package-specs": [
