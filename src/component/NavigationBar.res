@@ -1,20 +1,20 @@
 @react.component
 let make = () => {
-  let style = ReactDOM.Style.make(
-    ~backgroundColor="white",
-    ~width="100%",
-    ~display="flex",
+  open MaterialUi;
+  let titleStyle=ReactDOM.Style.make(
+    ~flexGrow="1",
     (),
   )
 
-  let handler = %raw(`(unit) => console.log(unit)`)
-
-  <div style={style}>
-    <Logo />
-    <Spacer />
-    <Button label={"Log in"} onClick={handler} />
-    <Button label={"Sign Up"} onClick={handler} />
-    <Label label={"English"} />
-    <Label label={"$USD"} />
-  </div>
+  <AppBar position=#Static color=#Transparent>
+    <Toolbar>
+      <div style={titleStyle}>
+        <Logo />
+      </div>
+      <Button variant=#Outlined color=#Inherit>{React.string("Log In")}</Button>
+      <Button color=#Inherit>{React.string("Sign Up")}</Button>
+      <Button color=#Inherit>{React.string("English")}</Button>
+      <Button color=#Inherit>{React.string("$ USD")}</Button>
+    </Toolbar>
+  </AppBar>
 }
